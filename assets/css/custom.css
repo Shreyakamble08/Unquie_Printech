@@ -1,0 +1,84 @@
+/* ============================================================
+   Unique Printech — Custom styles
+   Only things Tailwind can't express efficiently.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; color: #1A1A1A; }
+
+/* ---------- CMYK brand strip (matches brochure bottom bar) ---------- */
+.cmyk-strip {
+  height: 10px;
+  background: linear-gradient(90deg,
+    #EC008C 0 25%,
+    #FFD400 25% 50%,
+    #00AEEF 50% 75%,
+    #1A1A1A 75% 100%);
+}
+
+/* ---------- Desktop nav links ---------- */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(26, 26, 26, 0.8);
+  transition: color 0.2s, background 0.2s;
+}
+.nav-link:hover { color: #EC008C; }
+
+.dropdown-item {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: rgba(26, 26, 26, 0.8);
+}
+.dropdown-item:hover { background: #F5F6F8; color: #EC008C; }
+
+/* ---------- Mobile nav links ---------- */
+.mobile-link {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(26, 26, 26, 0.85);
+}
+.mobile-link:hover { background: #F5F6F8; color: #EC008C; }
+
+/* ---------- Services dropdown open / close animation ---------- */
+.dropdown-panel {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.dropdown:hover        .dropdown-panel,
+.dropdown:focus-within .dropdown-panel,
+.dropdown.open         .dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ---------- Back-to-top button fade ---------- */
+#back-to-top { transition: opacity 0.25s ease; }
+
+/* ---------- Card hover lift ---------- */
+.card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Scroll reveal ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeUp { animation: fadeUp 0.6s ease-out both; }

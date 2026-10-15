@@ -1,0 +1,145 @@
+<!-- ============================================================
+     Unique Printech — Common Header Component
+     Injected into #header-mount by header.js
+     ============================================================ -->
+
+<header id="site-header">
+
+    <!-- ---------- Utility Bar ---------- -->
+    <div class="utility-bar">
+        <div class="utility-inner">
+            <a href="tel:+919158700128" class="utility-item">
+                <span class="utility-icon" aria-hidden="true">☎</span>
+                <span class="utility-label">Call us</span>
+                <span class="utility-value">+91 9158700128</span>
+            </a>
+            <span class="utility-divider" aria-hidden="true"></span>
+            <a href="mailto:info@uniqueprintech.com" class="utility-item">
+                <span class="utility-icon" aria-hidden="true">✉</span>
+                <span class="utility-label">Email</span>
+                <span class="utility-value">info@uniqueprintech.com</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- ---------- Main Navbar ---------- -->
+    <div class="navbar-inner">
+        <div class="navbar-row">
+
+            <!-- Logo -->
+            <a href="/index.html" class="logo-link" aria-label="Unique Printech home">
+                <img src="/Images/logo.png" alt="Unique Printech" class="site-logo">
+            </a>
+
+            <!-- ---------- Desktop Navigation ---------- -->
+            <nav class="desktop-nav" aria-label="Primary">
+
+                <!-- Home -->
+                <a href="/index.html" data-nav-link class="nav-link">Home</a>
+
+                <!-- About -->
+                <a href="/about.html" data-nav-link class="nav-link">About</a>
+
+                <!-- Services dropdown -->
+                <div class="nav-item" data-dropdown>
+                    <button type="button" class="nav-trigger" aria-expanded="false" aria-controls="dd-services">
+                        Services
+                        <span class="nav-caret" aria-hidden="true"></span>
+                    </button>
+                    <div id="dd-services" class="dropdown" role="menu" aria-hidden="true">
+                        <div class="dropdown-panel dropdown-single">
+                            <a href="/printing-services.html" data-nav-link class="dropdown-link" role="menuitem">
+                                <span class="dropdown-label">Printing Services</span>
+                                <span class="dropdown-desc">Offset, digital &amp; large-format printing</span>
+                            </a>
+                            <a href="/hospital-stationery.html" data-nav-link class="dropdown-link" role="menuitem">
+                                <span class="dropdown-label">Hospital Stationery</span>
+                                <span class="dropdown-desc">Medical forms, pads &amp; custom stationery</span>
+                            </a>
+                            <a href="/outdoor-publishing.html" data-nav-link class="dropdown-link" role="menuitem">
+                                <span class="dropdown-label">Outdoor Publishing &amp; Design</span>
+                                <span class="dropdown-desc">Hoarding, signage &amp; outdoor branding</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery -->
+                <a href="/gallery.html" data-nav-link class="nav-link">Gallery</a>
+
+                <!-- Machinery -->
+                <a href="/machinery.html" data-nav-link class="nav-link">Machinery</a>
+
+                <!-- Contact Us -->
+                <a href="/contact.html" data-nav-link class="nav-link">Contact Us</a>
+
+            </nav>
+
+            <!-- ---------- Right side actions ---------- -->
+            <div class="navbar-actions">
+                <a href="/contact.html" class="btn-solid">
+                    <span>Request a Quote</span>
+                </a>
+
+                <button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false"
+                    aria-controls="mobile-menu" aria-label="Open menu">
+                    <span class="hamburger" id="hamburger-icon">
+                        <span></span><span></span><span></span>
+                    </span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Backdrop for mobile menu -->
+    <div id="mobile-backdrop" class="mobile-backdrop" aria-hidden="true"></div>
+
+    <!-- ---------- Mobile menu panel ---------- -->
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+        <div class="mobile-head">
+            <span class="mobile-head-title">Menu</span>
+            <button type="button" id="mobile-close" class="mobile-close" aria-label="Close menu">
+                <span></span><span></span>
+            </button>
+        </div>
+
+        <nav aria-label="Primary (mobile)" class="mobile-inner">
+
+            <!-- Contact card -->
+            <div class="mobile-contact">
+                <a href="tel:+919158700128" class="mobile-contact-item">
+                    <span class="mobile-contact-label">Call us</span>
+                    <span class="mobile-contact-value">+91 9158700128</span>
+                </a>
+                <a href="mailto:info@uniqueprintech.com" class="mobile-contact-item">
+                    <span class="mobile-contact-label">Email</span>
+                    <span class="mobile-contact-value">info@uniqueprintech.com</span>
+                </a>
+            </div>
+
+            <!-- Primary links — Home & About FIRST, always visible -->
+            <div class="mobile-group mobile-group-flat">
+                <a href="/index.html" data-nav-link class="mobile-flat-link">Home</a>
+                <a href="/about.html" data-nav-link class="mobile-flat-link">About</a>
+            </div>
+
+            <!-- Services accordion (built by JS from desktop dropdown) -->
+            <!-- JS will insert the Services accordion here -->
+
+            <!-- Remaining primary links -->
+            <div class="mobile-group mobile-group-flat">
+                <a href="/gallery.html" data-nav-link class="mobile-flat-link">Gallery</a>
+                <a href="/machinery.html" data-nav-link class="mobile-flat-link">Machinery</a>
+                <a href="/contact.html" data-nav-link class="mobile-flat-link">Contact Us</a>
+            </div>
+
+            <!-- CTA -->
+            <div class="mobile-actions">
+                <a href="/contact.html" class="mobile-btn mobile-btn-solid">Request a Quote</a>
+            </div>
+
+        </nav>
+    </div>
+
+</header>

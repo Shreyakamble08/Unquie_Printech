@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unique Printech — Where Quality Meets Style</title>
+  <meta name="description"
+    content="Offset & digital printing, corporate and hospital stationery, outdoor publishing and graphic design in Ahmednagar." />
+  <meta name="theme-color" content="#EC008C" />
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="assets/css/custom.css" />
+  <!-- Component styles -->
+  <link rel="stylesheet" href="/header/header.css" />
+
+  <!-- Layout-2 specific styles (scoped, safe to remove if you go back to Layout 1) -->
+  <style>
+    /* Big background display word, echoing the brochure's "PRINTING" overlay */
+    .display-word {
+      font-family: 'Anton', Impact, sans-serif;
+      letter-spacing: 0.02em;
+      line-height: 0.85;
+      color: rgba(26, 26, 26, 0.045);
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    /* Marquee row of service words scrolling horizontally */
+    .marquee {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      width: max-content;
+      animation: marquee 40s linear infinite;
+    }
+
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Numbered process rail (vertical on mobile, horizontal on desktop) */
+    .rail-step {
+      position: relative;
+    }
+
+    .rail-step::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 60px;
+      bottom: -40px;
+      width: 2px;
+      background: repeating-linear-gradient(to bottom, #00AEEF 0 6px, transparent 6px 12px);
+    }
+
+    .rail-step:last-child::before {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .rail-step::before {
+        left: 0;
+        right: -32px;
+        top: 28px;
+        bottom: auto;
+        width: auto;
+        height: 2px;
+        background: repeating-linear-gradient(to right, #00AEEF 0 6px, transparent 6px 12px);
+      }
+    }
+
+    /* Asymmetric photo frame accent */
+    .frame-accent {
+      position: relative;
+    }
+
+    .frame-accent::after {
+      content: '';
+      position: absolute;
+      inset: 14px -14px -14px 14px;
+      border: 2px solid #EC008C;
+      border-radius: 1.5rem;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-brand-ink">
+
+  <!-- ============ SHARED HEADER ============ -->
+  <div id="header-mount"></div>
+
+  <!-- ============ PAGE CONTENT ============ -->
+  <main>
+
+    <!-- ---------- HERO: split editorial ---------- -->
+    <section class="relative overflow-hidden">
+      <div class="display-word absolute top-2 left-1/2 -translate-x-1/2 text-[16vw] z-0">
+        PRINTING
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 lg:pt-24 lg:pb-32">
+        <div class="grid lg:grid-cols-12 gap-10 items-end">
+
+          <!-- Left: label + headline + CTAs -->
+          <div class="lg:col-span-7">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-md bg-brand-cyan"></span>
+              <span class="w-8 h-8 rounded-md bg-brand-magenta"></span>
+              <span class="w-8 h-8 rounded-md bg-brand-yellow"></span>
+              <span class="w-8 h-8 rounded-md bg-brand-ink"></span>
+              <span class="ml-2 text-xs uppercase tracking-[0.2em] text-brand-ink/50">
+                Offset &amp; Digital
+              </span>
+            </div>
+
+            <h1 class="mt-6 font-head font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
+              Every print job,<br />
+              <span class="text-brand-magenta">crafted</span> to
+              <span class="text-brand-cyan">specification</span>.
+            </h1>
+
+            <p class="mt-6 text-lg text-brand-ink/70 max-w-lg">
+              From a single prescription pad to a full outdoor hoarding — one
+              press, one team, one standard of quality.
+            </p>
+
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a href="contact.html"
+                class="inline-flex items-center gap-2 rounded-full bg-brand-ink text-white px-6 py-3 text-sm font-semibold hover:bg-brand-ink/90 transition">
+                Start a project
+                <svg class="w-4 h-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10.75 4.75 15 9l-4.25 4.25" />
+                  <path d="M15 9H5" />
+                </svg>
+              </a>
+              <a href="services.html"
+                class="text-sm font-semibold text-brand-ink/70 hover:text-brand-magenta transition">
+                Browse services →
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: info card -->
+          <div class="lg:col-span-5">
+            <div class="rounded-3xl border border-black/5 bg-brand-slate p-8">
+              <p class="text-xs uppercase tracking-[0.2em] text-brand-ink/50">Direct line</p>
+              <a href="tel:+918788882126"
+                class="mt-2 block font-head font-extrabold text-3xl hover:text-brand-magenta transition">
+                +91 87 88 88 21 26
+              </a>
+              <p class="mt-6 text-xs uppercase tracking-[0.2em] text-brand-ink/50">Visit the press</p>
+              <address class="not-italic text-sm text-brand-ink/70 mt-2 leading-relaxed">
+                Sr. No. 45/2c, Plot no. 13/14/15/3,<br />
+                P Park, Tapovan Road, Ahmednagar
+              </address>
+              <a href="contact.html"
+                class="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-magenta text-white px-5 py-2.5 text-sm font-semibold">
+                Request a Quote
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmyk-strip"></div>
+    </section>
+
+    <!-- ---------- SERVICE MARQUEE ---------- -->
+    <section class="bg-white py-8 border-b border-black/5 overflow-hidden">
+      <div class="marquee">
+        <div class="marquee-track">
+          <!-- Duplicated row for seamless loop -->
+          <span class="font-head font-extrabold text-3xl sm:text-4xl text-brand-ink/15">CALENDARS</span>
+          <span class="w-2 h-2 rounded-full bg-brand-cyan self-center"></span>
+          <span class="font-head font-extrabold text-3xl sm:text-4xl text-brand-ink/15">HOSPITAL FILES</span>
+          <span class="w-2 h-2 rounded-full bg-brand-magenta self-center"></span>
+          <span class="font-head font-extrabold text-3xl sm:text-4xl text-brand-ink/15">ANNUAL REPORTS</span>
+          <span class="w-2 h-2 rounded-full bg-brand-yellow self-center"></span>
+          <span class="font-head font-extrabold text-3xl sm:text-4xl text-brand-ink/15">HOARDINGS</span>
+          <span class="w-2 h-2 rounded-full bg-brand-cyan self-center"></span>
+          <span class="font-head font-extrabold text-3xl sm:text-4xl text-brand-ink/15">PACKAGING</span>
+          <span class="w-2 h-2 rounded-full bg-brand-magenta self-center"></span>
+          <span class="font-head font-extrabold text-3xl sm:text-4xl text-brand-ink/15">VINYL &amp; FLEX</span>
+          <span class="w-2 h-2 rounded-full bg-brand-yellow self-center"></span>
+
+          <!-- Duplicate set -->
+          <span class="font-head font-extrabold text-3xl sm:text-4xl text-brand-ink/15">CALENDARS</span>
+          <span class="w-2 h-2 rounded-full bg-brand-cyan self-center"></span>
+          <span class="font-head font-extrabold text-3xl sm:text-4xl text-brand-ink/15">HOSPITAL FILES</span>
+          <span class="w-2 h-2 rounded-full bg-brand-magenta self-center"></span>
+          <span class="font-head font-extrabold text-3xl sm:text-4xl text-brand-ink/15">ANNUAL REPORTS</span>
+          <span class="w-2 h-2 rounded-full bg-brand-yellow self-center"></span>
+          <span class="font-head font-extrabold text-3xl sm:text-4xl text-brand-ink/15">HOARDINGS</span>
+          <span class="w-2 h-2 rounded-full bg-brand-cyan self-center"></span>
+          <span class="font-head font-extrabold text-3xl sm:text-4xl text-brand-ink/15">PACKAGING</span>
+          <span class="w-2 h-2 rounded-full bg-brand-magenta self-center"></span>
+          <span class="font-head font-extrabold text-3xl sm:text-4xl text-brand-ink/15">VINYL &amp; FLEX</span>
+          <span class="w-2 h-2 rounded-full bg-brand-yellow self-center"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- SERVICES (asymmetric magazine grid) ---------- -->
+    <section class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid lg:grid-cols-12 gap-10 mb-14">
+          <div class="lg:col-span-4">
+            <p class="text-xs uppercase tracking-[0.2em] text-brand-magenta font-semibold">
+              01 — Services
+            </p>
+            <h2 class="mt-3 font-head font-extrabold text-3xl sm:text-4xl leading-tight">
+              A complete print<br />and finishing house.
+            </h2>
+          </div>
+          <div class="lg:col-span-8 lg:pt-4">
+            <p class="text-brand-ink/70 max-w-2xl">
+              Offset and digital printing, corporate and hospital stationery,
+              packaging, outdoor publishing and design — every stage handled
+              in-house so nothing gets lost between vendors.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5">
+
+          <!-- Big card: Commercial -->
+          <a href="commercial-printing.html"
+            class="card-lift lg:col-span-4 rounded-3xl overflow-hidden bg-brand-ink text-white p-8 lg:p-10 flex flex-col justify-between min-h-[240px]">
+            <div>
+              <span class="text-xs uppercase tracking-[0.2em] text-brand-yellow">Commercial</span>
+              <h3 class="mt-3 font-head font-extrabold text-2xl lg:text-3xl">
+                Calendars, diaries, magazines &amp; books.
+              </h3>
+              <p class="mt-4 text-sm text-white/70 max-w-md">
+                Bulk commercial print, in-house binding and finishing.
+              </p>
+            </div>
+            <span class="mt-8 inline-flex text-brand-yellow font-semibold text-sm">Explore →</span>
+          </a>
+
+          <!-- Small card: Hospital -->
+          <a href="hospital-stationery.html"
+            class="card-lift lg:col-span-2 rounded-3xl bg-brand-slate p-8 flex flex-col justify-between min-h-[240px]">
+            <div>
+              <span class="text-xs uppercase tracking-[0.2em] text-brand-magenta font-semibold">Hospital</span>
+              <h3 class="mt-3 font-head font-extrabold text-xl">Files, pads &amp; letterheads.</h3>
+            </div>
+            <span class="mt-8 text-brand-magenta font-semibold text-sm">Explore →</span>
+          </a>
+
+          <!-- Small card: Corporate -->
+          <a href="corporate-printing.html"
+            class="card-lift lg:col-span-2 rounded-3xl bg-brand-slate p-8 flex flex-col justify-between min-h-[220px]">
+            <div>
+              <span class="text-xs uppercase tracking-[0.2em] text-brand-ink/60 font-semibold">Corporate</span>
+              <h3 class="mt-3 font-head font-extrabold text-xl">Reports, folders, boxes.</h3>
+            </div>
+            <span class="mt-8 text-brand-magenta font-semibold text-sm">Explore →</span>
+          </a>
+
+          <!-- Small card: Outdoor -->
+          <a href="outdoor-publishing.html"
+            class="card-lift lg:col-span-2 rounded-3xl bg-brand-slate p-8 flex flex-col justify-between min-h-[220px]">
+            <div>
+              <span class="text-xs uppercase tracking-[0.2em] text-brand-ink/60 font-semibold">Outdoor</span>
+              <h3 class="mt-3 font-head font-extrabold text-xl">Stalls, hoardings, vinyl.</h3>
+            </div>
+            <span class="mt-8 text-brand-magenta font-semibold text-sm">Explore →</span>
+          </a>
+
+          <!-- Small card: Design -->
+          <a href="graphic-design.html"
+            class="card-lift lg:col-span-2 rounded-3xl bg-brand-yellow text-brand-ink p-8 flex flex-col justify-between min-h-[220px]">
+            <div>
+              <span class="text-xs uppercase tracking-[0.2em] text-brand-ink/60 font-semibold">Design</span>
+              <h3 class="mt-3 font-head font-extrabold text-xl">Logos, catalogues, banners.</h3>
+            </div>
+            <span class="mt-8 text-brand-ink font-semibold text-sm">Explore →</span>
+          </a>
+
+          <!-- Full-width strip: All services + finishing -->
+          <a href="services.html"
+            class="card-lift lg:col-span-6 rounded-3xl border border-black/5 p-6 lg:p-8 flex flex-wrap items-center justify-between gap-4 hover:border-brand-magenta/40 transition">
+            <div>
+              <p class="text-xs uppercase tracking-[0.2em] text-brand-ink/50">Everything else</p>
+              <h3 class="mt-2 font-head font-extrabold text-xl">
+                Binding · Lamination · Spot UV · Die cutting · Perforation · Installation
+              </h3>
+            </div>
+            <span class="text-brand-magenta font-semibold">All services →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- DIFFERENTIATORS: horizontal colour bands ---------- -->
+    <section class="bg-brand-slate py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid lg:grid-cols-12 gap-10 mb-14">
+          <div class="lg:col-span-5">
+            <p class="text-xs uppercase tracking-[0.2em] text-brand-magenta font-semibold">
+              02 — Why us
+            </p>
+            <h2 class="mt-3 font-head font-extrabold text-3xl sm:text-4xl">
+              How we're different from other printers.
+            </h2>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <article class="rounded-3xl overflow-hidden bg-white">
+            <div class="bg-brand-cyan text-white px-6 py-5">
+              <span class="font-head font-extrabold text-2xl tracking-wider">SPEED</span>
+            </div>
+            <ul class="p-6 space-y-3 text-brand-ink/80 text-sm">
+              <li class="flex gap-3"><span class="text-brand-cyan">—</span>Production capacity for large runs</li>
+              <li class="flex gap-3"><span class="text-brand-cyan">—</span>Delivered when required</li>
+              <li class="flex gap-3"><span class="text-brand-cyan">—</span>Last-moment eye-opening turnaround</li>
+            </ul>
+          </article>
+
+          <article class="rounded-3xl overflow-hidden bg-white">
+            <div class="bg-brand-magenta text-white px-6 py-5">
+              <span class="font-head font-extrabold text-2xl tracking-wider">QUALITY</span>
+            </div>
+            <ul class="p-6 space-y-3 text-brand-ink/80 text-sm">
+              <li class="flex gap-3"><span class="text-brand-magenta">—</span>Careful ink selection</li>
+              <li class="flex gap-3"><span class="text-brand-magenta">—</span>Quality paper stocks</li>
+              <li class="flex gap-3"><span class="text-brand-magenta">—</span>Professional lamination</li>
+            </ul>
+          </article>
+
+          <article class="rounded-3xl overflow-hidden bg-white">
+            <div class="bg-brand-yellow text-brand-ink px-6 py-5">
+              <span class="font-head font-extrabold text-2xl tracking-wider">QUANTITY</span>
+            </div>
+            <ul class="p-6 space-y-3 text-brand-ink/80 text-sm">
+              <li class="flex gap-3"><span class="text-brand-yellow">—</span>Minimum order quantities</li>
+              <li class="flex gap-3"><span class="text-brand-yellow">—</span>Maximum production capacity</li>
+              <li class="flex gap-3"><span class="text-brand-yellow">—</span>Fully customised runs</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- MACHINERY / CAPABILITY (asymmetric photo block) ---------- -->
+    <section class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+
+        <div class="lg:col-span-6 frame-accent">
+          <div class="rounded-3xl overflow-hidden bg-brand-slate aspect-[4/3] flex items-center justify-center">
+            <!-- Replace with real press photo at assets/img/press.jpg -->
+            <span class="text-brand-ink/40 text-sm">Press photo</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <p class="text-xs uppercase tracking-[0.2em] text-brand-magenta font-semibold">
+            03 — Inside the press
+          </p>
+          <h2 class="mt-3 font-head font-extrabold text-3xl sm:text-4xl">
+            Modern machinery,<br />in-house end-to-end.
+          </h2>
+          <p class="mt-5 text-brand-ink/70">
+            From CTCP plate making to four-colour offset, digital presses,
+            lamination, perfect binding and programming cutting — everything
+            runs under our roof.
+          </p>
+
+          <ul class="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-3 text-sm text-brand-ink/80">
+            <li class="flex gap-3"><span class="text-brand-cyan">●</span>Komari Enthrone E429 4-Colour Offset</li>
+            <li class="flex gap-3"><span class="text-brand-cyan">●</span>CTCP Machine &amp; Plate Processor</li>
+            <li class="flex gap-3"><span class="text-brand-cyan">●</span>Hi Speed Flex Printing 512i</li>
+            <li class="flex gap-3"><span class="text-brand-cyan">●</span>Epson Inkjet 10-Colour Indoor</li>
+            <li class="flex gap-3"><span class="text-brand-cyan">●</span>3 Clamp Perfect Binding</li>
+            <li class="flex gap-3"><span class="text-brand-cyan">●</span>Thermal &amp; Cold Lamination</li>
+            <li class="flex gap-3"><span class="text-brand-cyan">●</span>Programming Cutting Machine</li>
+            <li class="flex gap-3"><span class="text-brand-cyan">●</span>Sheet Separator (24")</li>
+          </ul>
+
+          <a href="about.html"
+            class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-magenta hover:underline">
+            About our press →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- PROCESS: numbered rail ---------- -->
+    <section class="bg-brand-ink text-white py-20 lg:py-28">
+      <div class="cmyk-strip mb-20 -mt-20"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid lg:grid-cols-12 gap-10 mb-16">
+          <div class="lg:col-span-5">
+            <p class="text-xs uppercase tracking-[0.2em] text-brand-yellow font-semibold">
+              04 — Process
+            </p>
+            <h2 class="mt-3 font-head font-extrabold text-3xl sm:text-4xl">
+              Nine steps from brief to delivery.
+            </h2>
+          </div>
+          <div class="lg:col-span-7 lg:pt-3">
+            <p class="text-white/70 max-w-xl">
+              A transparent workflow — you always know which stage your job is in.
+            </p>
+            <a href="process.html" class="mt-4 inline-flex text-brand-yellow font-semibold text-sm">
+              Full process breakdown →
+            </a>
+          </div>
+        </div>
+
+        <ol class="grid md:grid-cols-3 lg:grid-cols-9 gap-y-12 md:gap-y-16 gap-x-6">
+          <li class="rail-step md:col-span-3 lg:col-span-3">
+            <div
+              class="w-14 h-14 rounded-full bg-brand-cyan text-white flex items-center justify-center font-head font-extrabold text-xl">
+              1</div>
+            <h3 class="mt-4 font-head font-bold">Understand Requirement</h3>
+            <p class="mt-2 text-sm text-white/60 max-w-[220px]">Purpose, quantity, budget, deadline.</p>
+          </li>
+          <li class="rail-step md:col-span-3 lg:col-span-3">
+            <div
+              class="w-14 h-14 rounded-full bg-brand-magenta text-white flex items-center justify-center font-head font-extrabold text-xl">
+              2</div>
+            <h3 class="mt-4 font-head font-bold">DTP / Design</h3>
+            <p class="mt-2 text-sm text-white/60 max-w-[220px]">In-house artwork preparation.</p>
+          </li>
+          <li class="rail-step md:col-span-3 lg:col-span-3">
+            <div
+              class="w-14 h-14 rounded-full bg-brand-yellow text-brand-ink flex items-center justify-center font-head font-extrabold text-xl">
+              3</div>
+            <h3 class="mt-4 font-head font-bold">Digital Sample</h3>
+            <p class="mt-2 text-sm text-white/60 max-w-[220px]">Proof for colour &amp; finish approval.</p>
+          </li>
+          <li class="rail-step md:col-span-3 lg:col-span-3">
+            <div
+              class="w-14 h-14 rounded-full bg-white text-brand-ink flex items-center justify-center font-head font-extrabold text-xl">
+              4</div>
+            <h3 class="mt-4 font-head font-bold">Plate Making</h3>
+            <p class="mt-2 text-sm text-white/60 max-w-[220px]">CTCP plates prepared for press.</p>
+          </li>
+          <li class="rail-step md:col-span-3 lg:col-span-3">
+            <div
+              class="w-14 h-14 rounded-full bg-brand-cyan text-white flex items-center justify-center font-head font-extrabold text-xl">
+              5</div>
+            <h3 class="mt-4 font-head font-bold">Final Printing</h3>
+            <p class="mt-2 text-sm text-white/60 max-w-[220px]">Four-colour offset / digital run.</p>
+          </li>
+          <li class="rail-step md:col-span-3 lg:col-span-3">
+            <div
+              class="w-14 h-14 rounded-full bg-brand-magenta text-white flex items-center justify-center font-head font-extrabold text-xl">
+              6</div>
+            <h3 class="mt-4 font-head font-bold">Lamination</h3>
+            <p class="mt-2 text-sm text-white/60 max-w-[220px]">Thermal, cold, spot UV, texture.</p>
+          </li>
+          <li class="rail-step md:col-span-3 lg:col-span-3">
+            <div
+              class="w-14 h-14 rounded-full bg-brand-yellow text-brand-ink flex items-center justify-center font-head font-extrabold text-xl">
+              7</div>
+            <h3 class="mt-4 font-head font-bold">Binding &amp; Cutting</h3>
+            <p class="mt-2 text-sm text-white/60 max-w-[220px]">Perfect binding, programming cut.</p>
+          </li>
+          <li class="rail-step md:col-span-3 lg:col-span-3">
+            <div
+              class="w-14 h-14 rounded-full bg-white text-brand-ink flex items-center justify-center font-head font-extrabold text-xl">
+              8</div>
+            <h3 class="mt-4 font-head font-bold">Packing</h3>
+            <p class="mt-2 text-sm text-white/60 max-w-[220px]">Careful packing per order spec.</p>
+          </li>
+          <li class="rail-step md:col-span-3 lg:col-span-3">
+            <div
+              class="w-14 h-14 rounded-full bg-brand-cyan text-white flex items-center justify-center font-head font-extrabold text-xl">
+              9</div>
+            <h3 class="mt-4 font-head font-bold">Ready for Delivery</h3>
+            <p class="mt-2 text-sm text-white/60 max-w-[220px]">Dispatched on schedule.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ---------- PORTFOLIO: magazine grid ---------- -->
+    <section class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex flex-wrap items-end justify-between gap-4 mb-14">
+          <div>
+            <p class="text-xs uppercase tracking-[0.2em] text-brand-magenta font-semibold">
+              05 — Featured work
+            </p>
+            <h2 class="mt-3 font-head font-extrabold text-3xl sm:text-4xl">
+              A glimpse of what we print.
+            </h2>
+          </div>
+          <a href="services.html" class="text-sm font-semibold text-brand-magenta hover:underline">
+            View all services →
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+          <figure class="col-span-2 rounded-3xl overflow-hidden relative group">
+            <div class="aspect-[16/10] bg-brand-slate flex items-center justify-center">
+              <span class="text-brand-ink/40 text-sm">Calendars &amp; Diaries</span>
+            </div>
+            <figcaption
+              class="absolute bottom-4 left-4 text-white bg-brand-ink/80 backdrop-blur px-3 py-1.5 rounded-full text-xs font-semibold">
+              Commercial
+            </figcaption>
+          </figure>
+          <figure class="rounded-3xl overflow-hidden relative group">
+            <div class="aspect-[4/5] bg-brand-slate flex items-center justify-center">
+              <span class="text-brand-ink/40 text-sm text-center px-2">Hospital Files</span>
+            </div>
+            <figcaption
+              class="absolute bottom-4 left-4 text-white bg-brand-magenta px-3 py-1.5 rounded-full text-xs font-semibold">
+              Hospital
+            </figcaption>
+          </figure>
+          <figure class="rounded-3xl overflow-hidden relative group">
+            <div class="aspect-[4/5] bg-brand-slate flex items-center justify-center">
+              <span class="text-brand-ink/40 text-sm text-center px-2">Annual Reports</span>
+            </div>
+            <figcaption
+              class="absolute bottom-4 left-4 text-white bg-brand-cyan px-3 py-1.5 rounded-full text-xs font-semibold">
+              Corporate
+            </figcaption>
+          </figure>
+          <figure class="rounded-3xl overflow-hidden relative group">
+            <div class="aspect-[4/3] bg-brand-slate flex items-center justify-center">
+              <span class="text-brand-ink/40 text-sm">Outdoor Hoarding</span>
+            </div>
+            <figcaption
+              class="absolute bottom-4 left-4 text-white bg-brand-ink/80 px-3 py-1.5 rounded-full text-xs font-semibold">
+              Outdoor
+            </figcaption>
+          </figure>
+          <figure class="rounded-3xl overflow-hidden relative group">
+            <div class="aspect-[4/3] bg-brand-slate flex items-center justify-center">
+              <span class="text-brand-ink/40 text-sm">Packaging Boxes</span>
+            </div>
+            <figcaption
+              class="absolute bottom-4 left-4 text-white bg-brand-yellow text-brand-ink px-3 py-1.5 rounded-full text-xs font-semibold">
+              Packaging
+            </figcaption>
+          </figure>
+          <figure class="col-span-2 rounded-3xl overflow-hidden relative group">
+            <div class="aspect-[16/9] bg-brand-slate flex items-center justify-center">
+              <span class="text-brand-ink/40 text-sm">Books &amp; Magazines</span>
+            </div>
+            <figcaption
+              class="absolute bottom-4 left-4 text-white bg-brand-magenta px-3 py-1.5 rounded-full text-xs font-semibold">
+              Publications
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- CONTACT CTA ---------- -->
+    <section class="bg-brand-slate py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="rounded-[2rem] bg-white border border-black/5 shadow-card p-8 lg:p-14 grid lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7">
+            <p class="text-xs uppercase tracking-[0.2em] text-brand-magenta font-semibold">
+              06 — Get a quote
+            </p>
+            <h2 class="mt-3 font-head font-extrabold text-3xl sm:text-4xl">
+              Tell us what you need printed.
+            </h2>
+            <p class="mt-4 text-brand-ink/70 max-w-xl">
+              Share the product, size, quantity and deadline. We'll respond with
+              a quotation and a production plan.
+            </p>
+          </div>
+          <div class="lg:col-span-5 flex flex-col sm:flex-row lg:justify-end gap-3">
+            <a href="contact.html"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-magenta text-white px-6 py-3 text-sm font-semibold hover:bg-brand-magenta/90">
+              Open enquiry form
+            </a>
+            <a href="tel:+918788882126"
+              class="inline-flex items-center justify-center gap-2 rounded-full border border-brand-ink/15 px-6 py-3 text-sm font-semibold hover:border-brand-ink/40">
+              Call the press
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ SHARED FOOTER ============ -->
+  <div data-component="footer"></div>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Back to top"
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-brand-ink text-white shadow-lg opacity-0 pointer-events-none">
+    ↑
+  </button>
+
+
+  <!-- Component scripts -->
+  <script src="/header/header.js" defer></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
